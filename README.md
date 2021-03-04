@@ -1,2 +1,2 @@
 # conf
-just some config file
+just some config files
