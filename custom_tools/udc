@@ -1,0 +1,7 @@
+#!/bin/zsh 
+
+mkdir $HOME/DC
+
+wget "https://discord.com/api/download/stable?platform=linux&format=tar.gz" -O $HOME/Apps/dc/stable.tar.gz
+
+tar -zxvf $HOME/Apps/dc/stable.tar.gz -C $HOME/Apps/dc/

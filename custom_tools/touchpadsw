@@ -1,0 +1,16 @@
+#!/usr/bin/zsh
+
+DEVICE="elan1203:00-04f3:307a-touchpad"
+STATE_FILE="/tmp/touchpad-state"
+
+if [ -f "$STATE_FILE" ] && [[ "$(cat $STATE_FILE)" == "off" ]] && [ -n $1 ]; then
+    hyprctl keyword "device[$DEVICE]:enabled" true
+    echo "on" > "$STATE_FILE"
+    notify-send "Touchpad On"
+else
+    hyprctl keyword "device[$DEVICE]:enabled" false
+    echo "off" > "$STATE_FILE"
+    notify-send "Touchpad Off"
+fi
+
+
